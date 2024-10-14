@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Screen iFrame</title>
+    <title>Iframe Fullscreen Content</title>
     <style>
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-        }
-        iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            overflow: hidden;
+        }
+        #fullScreenContent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://gomotive.com/?api-key=ubfiruwneu"></iframe>
+    <div id="fullScreenContent">
+        <iframe src="https://gomotive.com/?api-key=ubfiruwneu"></iframe>
+        <!-- Add your gomotive content here -->
+    </div>
+
+    <script>
+        function resizeContent() {
+            const content = document.getElementById('fullScreenContent');
+            content.style.width = window.innerWidth + 'px';
+            content.style.height = window.innerHeight + 'px';
+        }
+
+        window.addEventListener('resize', resizeContent);
+        resizeContent();  // Call it once initially
+    </script>
 </body>
 </html>
