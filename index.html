@@ -16,6 +16,18 @@
     </style>
 </head>
 <body>
-    <iframe src="https://gomotive.com/?api-key=ubfiruwneu" width="100%" height="100%"></iframe>
+ 
+    <iframe id="myIframe" src="" width="100%" height="100%"></iframe>
+
+    <script>
+        // Function to extract query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        const apiKey = getQueryParam('apikey');
+        const iframeSrc = `https://gomotive.com/?api-key=${apiKey}`;
+        document.getElementById('myIframe').src = iframeSrc;
+    </script>
 </body>
 </html>
