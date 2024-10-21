@@ -27,6 +27,7 @@
         }
         const apiKey = getQueryParam('apikey');
         const iframeSrc = `https://gomotive.com/?api-key=${apiKey}`;
+        console.log(window.top.location.hostname)
         document.getElementById('myIframe').src = iframeSrc;
     </script>
 </body>
